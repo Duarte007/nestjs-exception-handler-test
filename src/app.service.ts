@@ -6,7 +6,8 @@ export class AppService {
     try {
       throw new BadRequestException('This is a bad request exception');
     } catch (error) {
-      throw new HttpException(error, undefined);
+      console.log(error);
+      throw new HttpException(error, error.response.status);
     }
   }
 }
